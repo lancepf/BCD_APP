@@ -64,7 +64,7 @@ function graphAppears(path) {
 //contact: Bret Heale
 //Match look-up data with resource graphic
 //returns graphic
-//this acts similarly to an infobutton manager but is more of a retrieval engine
+//this acts similarly to an infobutton manager but is more of a retrieval engine. In essence it combines the IM and search engine of the resource
 //in real-life the request comes as a get or a post HTML request. Here we keeping it basic and doing everything client side.
 //This limits how the resource graphs can be accessed - but that's okay for now.
 //requestParameters must be in the form:
@@ -94,14 +94,10 @@ var incomingRequest = new resourceProfile(requestParameters);
 //or see checkit
 
 //then iterate through resource profiles to find best match
-//LOGIC LOGIC LOGIC STEP
-		
+//LOGIC STEP	
 var currentMatch = 0;
 var bestMatch = 0;
 var bestIndex = 0;
-//array based would need to iterate over every single parameter over every profiles parameters
-//hybrid where key is name and we could ensure that matching concepts had same name would reduce the complexity of the search to matching keys and then checking values 
-//another option check every parameter name, our assumption is that there will not be too many parameter names...
 for (var index  = 0; index < incomingRequest.length; ++index) { //over parameters
 	//future use sorting to make matching more efficient//
 	for (var index2 = 0; index2 < resourceArray.length; ++index2) { //resource profiles
