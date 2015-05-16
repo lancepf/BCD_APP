@@ -2,36 +2,45 @@
 <head>
   <meta charset="UTF-8">
   <title>Breast Cancer Dashboard - Home</title>
+  <link href="CSS/css.css" type="text/css" rel="stylesheet">
 </head>
 
 <body>
   <h2>Patient</h2>
-  <form action="">
-    Age: <input type="text" name="age" value="">
-    Menopause: <input type="text" name="menopause" value="">
-    Family History: <input type="text" name="familyHistory" value="">
-    BRCA: <input type="text" name="familyHistory" value="">
-    Breast density: <input type="text" name="breastDensity" value="">
-  </form>
-  
+  <br>
+  <form class="bcd_form" action="" method="post">
+    Age: <input type="text" name="age" value="" placeholder="Age" required>
+    Menopause: <input type="text" name="menopause" value="" required>
+    <br>
+    Family History: <input type="text" name="familyHistory" value="" required>
+    <br>
+    BRCA: <input type="text" name="familyHistory" value="" required>
+    Breast density: <input type="text" name="breastDensity" value="" placeholder="Breast density" required>
+  <br>
+  <br>
   <h2>Tumor</h2>
-  <form action="">
-    Stage: <input type="text" name="stage" value="">
-    ER: <input type="text" name="er" value="">
-    PR: <input type="text" name="pr" value="">
-    HER2: <input type="text" name="her2" value="">
-    # positive nodes: <input type="text" name="posNodes" value="">
-    Tumor diameter (cm): <input type="text" name="tumorDiameter" value="">
-    Histology type: <input type="text" name="histologyType" value="">
-    Grade: <input type="text" name="grade" value="">
-  </form>
-  
+  <br>
+    Stage: <input type="text" name="stage" value="" required>
+    ER: <input type="text" name="er" value="" required>
+    PR: <input type="text" name="pr" value="" required>
+    HER2: <input type="text" name="her2" value="" required>
+    <br>
+    # positive nodes: <input type="text" name="posNodes" value="" placeholder="# positive nodes" required>
+    Tumor diameter (cm): <input type="text" name="tumorDiameter" value="" placeholder="Tumor diameter in centimeters" required>
+    <br>
+    <br>
+    Histology type: <input type="text" name="histologyType" value="" required>
+    Grade: <input type="text" name="grade" value="" required>
+  <br>
+  <br>
   <h2>Assessment Scores</h2>
-  <form action="">
-    OncotypeDx: <input type="text" name="Oncotype" value="">
-    PAM50: <input type="text" name="pam50" value="">
-    MammaPrint: <input type="text" name="mammaPrint" value="">
-    Adjuvant!: <input type="text" name="adjuvant" value="">
+  <br>
+    OncotypeDx: <input type="text" name="Oncotype" value="" required>
+    PAM50: <input type="text" name="pam50" value="" required>
+    <br>
+    MammaPrint: <input type="text" name="mammaPrint" value="" required>
+    Adjuvant!: <input type="text" name="adjuvant" value="" required>
+    <button class="print" type="submit">Print</button>
   </form>
 </body>
 </html>
