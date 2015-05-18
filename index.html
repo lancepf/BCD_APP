@@ -9,28 +9,85 @@
   <h2>Patient</h2>
   <br>
   <form class="bcd_form" action="" method="post">
-    Age: <input type="text" name="age" value="" placeholder="Age" required>
+    Age: <input type="number" name="age" min="18" max="100" value="" placeholder="Age" required>
+    <br>
     Menopause: <input type="text" name="menopause" value="" required>
     <br>
     Family History: <input type="text" name="familyHistory" value="" required>
     <br>
     BRCA: <input type="text" name="familyHistory" value="" required>
+    <br>
     Breast density: <input type="text" name="breastDensity" value="" placeholder="Breast density" required>
   <br>
   <br>
   <h2>Tumor</h2>
   <br>
-    Stage: <input type="text" name="stage" value="" required>
+    Stage: <select name="stage">
+    	<option value="None selected">Please select below</option>
+        <option value="Stage I">Stage I (Stage IA, Stage IB)</option>
+        <option value="Stage II">Stage II (Stage IIA, Stage IIB)</option>
+        <option value="Stage III">Stage III (Stage IIA, Stage IIB, Stage IIC)</option>
+        <option value="Stage IV">Stage IV</option>
+        </select>
+        <br>
+    Primary Tumor (T): <select name="primaryTumor">
+    	<option value="None selected">Please select below</option>
+        <option value="TX">TX</option>
+        <option value="T0">T0</option>
+        <option value="Tis">Tis</option>
+        <option value="Tis DCIS">Tis (DCIS)</option>
+        <option value="Tis LCIS">Tis (LCIS)</option>
+        <option value="Tis Paget">Tis (Paget's)</option>
+        <option value="T1">T1</option>
+        <option value="T2">T2</option>
+        <option value="T3">T3</option>
+        <option value="T4">T4</option>
+    </select>
+    <br>
     ER: <input type="text" name="er" value="" required>
+    <br>
     PR: <input type="text" name="pr" value="" required>
+    <br>
     HER2: <input type="text" name="her2" value="" required>
     <br>
     # positive nodes: <input type="text" name="posNodes" value="" placeholder="# positive nodes" required>
+    <br>
     Tumor diameter (cm): <input type="text" name="tumorDiameter" value="" placeholder="Tumor diameter in centimeters" required>
+    <br>
+    Regional Lymph Nodes (N): <select name="RegionalLymphNodes">
+    	<option value="NX">NX</option>
+        <option value="N0">N0</option>
+        <option value="N1">N1</option>
+        <option value="N2">N2</option>
+        <option value="N3">N3</option>
+    </select>
+    <br>
+    Distant Metastasis (M): <select name="DistantMetastasis">
+    	<option value="M0">M0</option>
+        <option value="M1">M1</option>
+    </select>
+    Laterality: <select name="Laterality">
+    	<option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+    </select>
     <br>
     <br>
     Histology type: <input type="text" name="histologyType" value="" required>
-    Grade: <input type="text" name="grade" value="" required>
+    Grade: <select name="grade">
+    	<option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select>
+    <br>
+    Charlson Comorbidity Index (CCI): <input type="number" min="0" max="37" name="CCI" required>
+    <br>
+    Treatment: 
+    <input type="checkbox" name="NoTreatment" value="No treatment">No treatment
+    <input type="checkbox" name="Surgery" value="Surgery">Surgery
+    <input type="checkbox" name="Radiation" value="Radiation therapy">Radiation therapy
+    <input type="checkbox" name="chemo" value="Chemotherapy">Chemotherapy
   <br>
   <br>
   <h2>Assessment Scores</h2>
