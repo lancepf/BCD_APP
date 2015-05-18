@@ -26,7 +26,7 @@
   <br>
   <h2>Tumor</h2>
   <br>
-    Stage<span class="asterisk">*</span>: <select required>
+    Stage<span class="asterisk">*</span>: <select name="Stage.Group.pathology" required>
     	<option value="">Please select below</option>
         <option value="Stage I">Stage I (Stage IA, Stage IB)</option>
         <option value="Stage II">Stage II (Stage IIA, Stage IIB)</option>
@@ -34,7 +34,7 @@
         <option value="Stage IV">Stage IV</option>
         </select>
         <br>
-    Primary Tumor (T)<span class="asterisk">*</span>: <select required>
+    Primary Tumor (T)<span class="asterisk">*</span>: <select name="Primary.tumor.pathology" required>
     	<option value="">Please select below</option>
         <option value="TX">TX</option>
         <option value="T0">T0</option>
@@ -58,7 +58,7 @@
     <br>
     Tumor diameter (cm): <input type="text" name="tumorDiameter" value="">
     <br>
-    Regional Lymph Nodes (N)<span class="asterisk">*</span>: <select required>
+    Regional Lymph Nodes (N)<span class="asterisk">*</span>: <select name="Primary.tumor.pathology" required>
     	<option value="none selected"> </option>
         <option value="NX">NX</option>
         <option value="N0">N0</option>
@@ -67,7 +67,7 @@
         <option value="N3">N3</option>
     </select>
     <br>
-    Distant Metastasis (M)<span class="asterisk">*</span>: <select required>
+    Distant Metastasis (M)<span class="asterisk">*</span>: <select name="Distant.metastases.clinical" required>
     	<option value=""> </option>
         <option value="M0">M0</option>
         <option value="M1">M1</option>
@@ -107,5 +107,9 @@
     Adjuvant!: <input type="text" name="adjuvant" value="">
     <button class="print" type="submit">Print</button>
   </form>
+  
+  <div class="bcd_graph">
+  
+  </div>
 </body>
 </html>
