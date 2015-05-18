@@ -6,32 +6,36 @@
 </head>
 
 <body>
+<h1>Breast Cancer Dashboard</h1>
+<span class="required_notification">* Required fields</span>
+<br>
+<br>
   <h2>Patient</h2>
   <br>
   <form class="bcd_form" action="" method="post">
-    Age: <input type="number" name="age" min="18" max="100" value="" placeholder="Age" required>
+    Age: <input type="number" name="age" min="18" max="100" value="">
     <br>
-    Menopause: <input type="text" name="menopause" value="" required>
+    Menopause: <input type="text" name="menopause" value="">
     <br>
-    Family History: <input type="text" name="familyHistory" value="" required>
+    Family History: <input type="text" name="familyHistory" value="">
     <br>
-    BRCA: <input type="text" name="familyHistory" value="" required>
+    BRCA: <input type="text" name="familyHistory" value="">
     <br>
-    Breast density: <input type="text" name="breastDensity" value="" placeholder="Breast density" required>
+    Breast density: <input type="text" name="breastDensity" value="">
   <br>
   <br>
   <h2>Tumor</h2>
   <br>
-    Stage: <select name="stage">
-    	<option value="None selected">Please select below</option>
+    Stage<span class="asterisk">*</span>: <select required>
+    	<option value="">Please select below</option>
         <option value="Stage I">Stage I (Stage IA, Stage IB)</option>
         <option value="Stage II">Stage II (Stage IIA, Stage IIB)</option>
         <option value="Stage III">Stage III (Stage IIA, Stage IIB, Stage IIC)</option>
         <option value="Stage IV">Stage IV</option>
         </select>
         <br>
-    Primary Tumor (T): <select name="primaryTumor">
-    	<option value="None selected">Please select below</option>
+    Primary Tumor (T)<span class="asterisk">*</span>: <select required>
+    	<option value="">Please select below</option>
         <option value="TX">TX</option>
         <option value="T0">T0</option>
         <option value="Tis">Tis</option>
@@ -44,44 +48,48 @@
         <option value="T4">T4</option>
     </select>
     <br>
-    ER: <input type="text" name="er" value="" required>
+    ER: <input type="text" name="er" value="">
     <br>
-    PR: <input type="text" name="pr" value="" required>
+    PR: <input type="text" name="pr" value="">
     <br>
-    HER2: <input type="text" name="her2" value="" required>
+    HER2: <input type="text" name="her2" value="">
     <br>
-    # positive nodes: <input type="text" name="posNodes" value="" placeholder="# positive nodes" required>
+    # positive nodes<span class="asterisk">*</span>: <input type="text"  value="" required>
     <br>
-    Tumor diameter (cm): <input type="text" name="tumorDiameter" value="" placeholder="Tumor diameter in centimeters" required>
+    Tumor diameter (cm): <input type="text" name="tumorDiameter" value="">
     <br>
-    Regional Lymph Nodes (N): <select name="RegionalLymphNodes">
-    	<option value="NX">NX</option>
+    Regional Lymph Nodes (N)<span class="asterisk">*</span>: <select required>
+    	<option value="none selected"> </option>
+        <option value="NX">NX</option>
         <option value="N0">N0</option>
         <option value="N1">N1</option>
         <option value="N2">N2</option>
         <option value="N3">N3</option>
     </select>
     <br>
-    Distant Metastasis (M): <select name="DistantMetastasis">
-    	<option value="M0">M0</option>
+    Distant Metastasis (M)<span class="asterisk">*</span>: <select required>
+    	<option value=""> </option>
+        <option value="M0">M0</option>
         <option value="M1">M1</option>
     </select>
     Laterality: <select name="Laterality">
-    	<option value="0">0</option>
+    	<option value=""> </option>
+        <option value="0">0</option>
         <option value="1">1</option>
         <option value="2">2</option>
     </select>
     <br>
     <br>
-    Histology type: <input type="text" name="histologyType" value="" required>
+    Histology type: <input type="text" name="histologyType" value="">
     Grade: <select name="grade">
-    	<option value="1">1</option>
+    	<option value=""> </option>
+        <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
     </select>
     <br>
-    Charlson Comorbidity Index (CCI): <input type="number" min="0" max="37" name="CCI" required>
+    Charlson Comorbidity Index (CCI): <input type="number" min="0" max="37" name="CCI">
     <br>
     Treatment: 
     <input type="checkbox" name="NoTreatment" value="No treatment">No treatment
@@ -92,11 +100,11 @@
   <br>
   <h2>Assessment Scores</h2>
   <br>
-    OncotypeDx: <input type="text" name="Oncotype" value="" required>
-    PAM50: <input type="text" name="pam50" value="" required>
+    OncotypeDx: <input type="text" name="Oncotype" value="">
+    PAM50: <input type="text" name="pam50" value="">
     <br>
-    MammaPrint: <input type="text" name="mammaPrint" value="" required>
-    Adjuvant!: <input type="text" name="adjuvant" value="" required>
+    MammaPrint: <input type="text" name="mammaPrint" value="">
+    Adjuvant!: <input type="text" name="adjuvant" value="">
     <button class="print" type="submit">Print</button>
   </form>
 </body>
