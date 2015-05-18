@@ -1,7 +1,5 @@
 /* Css */
 
-/* Css */
-
 * :focus {
 	outline: none;
 }
@@ -14,6 +12,16 @@ h2 {
   color: #EA80B0;
   display:inline;
   margin: 0 0 10 0;
+}
+
+.required_notification {
+	font-size: 0.688em;	
+	color: #d45252;
+	display: inline;
+}
+
+.asterisk {
+	color: #d45252;	
 }
 
 :-moz-placeholder {
