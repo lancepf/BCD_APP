@@ -10,6 +10,7 @@
 </head>
 
 <body>
+<article>
 <h1>Breast Cancer Dashboard</h1>
 <span class="required_notification">* Required fields</span>
 <br>
@@ -22,7 +23,6 @@
   form.addEventListener("submit", function(event) {
     console.log("Saving value");// form.elements.value.value);
     event.preventDefault();
-
   });
 </script>
     Age: <input type="number" name="age" min="18" max="100" value="">
@@ -120,7 +120,7 @@
     <!--button class="print" type="button" onclick="makeInfoRequest(this.form);">Print</button-->
 	<input class="print" type="submit" name="launch" value="Launch" onclick="makeInfoRequest(this.form);"-->
   </form>
-  
+  </article>
   <div class="bcd_graph" id="survivialGraph">
 	
   </div>
