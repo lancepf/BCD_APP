@@ -5,7 +5,7 @@
   <link href="CSS/css.css" type="text/css" rel="stylesheet">
   <script src="JS/d3/d3.js"></script>
   
-  <script src="JS/BCD_currentDraft1.js"></script>
+  <script src="JS/BCD_currentDraft.js"></script>
 
 </head>
 
@@ -16,7 +16,15 @@
 <br>
   <h2>Patient</h2>
   <br>
-  <form class="bcd_form" action="" method="get"> 
+  <form class="bcd_form" action="" method="get" > 
+  <script>
+  var form = document.querySelector("form");
+  form.addEventListener("submit", function(event) {
+    console.log("Saving value");// form.elements.value.value);
+    event.preventDefault();
+
+  });
+</script>
     Age: <input type="number" name="age" min="18" max="100" value="">
     <br>
     Menopause: <input type="text" name="menopause" value="">
@@ -62,7 +70,7 @@
     <br>
     Tumor diameter (cm): <input type="text" name="tumorDiameter" value="">
     <br>
-    Regional Lymph Nodes (N)<span class="asterisk">*</span>: <select name="Primary.tumor.pathology" required>
+    Regional Lymph Nodes (N)<span class="asterisk">*</span>: <select name="Regional.lymph.nodes" required>
     	<option value="none selected"> </option>
         <option value="NX">NX</option>
         <option value="N0">N0</option>
@@ -109,7 +117,8 @@
     <br>
     MammaPrint: <input type="text" name="mammaPrint" value="">
     Adjuvant!: <input type="text" name="adjuvant" value="">
-    <button class="print" type="button" onClick="makeInfoRequest(this.form)">Print</button>
+    <!--button class="print" type="button" onclick="makeInfoRequest(this.form);">Print</button-->
+	<input class="print" type="submit" name="launch" value="Launch" onclick="makeInfoRequest(this.form);"-->
   </form>
   
   <div class="bcd_graph" id="survivialGraph">
