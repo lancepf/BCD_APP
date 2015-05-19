@@ -3,6 +3,10 @@
   <meta charset="UTF-8">
   <title>Breast Cancer Dashboard - Home</title>
   <link href="CSS/css.css" type="text/css" rel="stylesheet">
+  <script src="JS/d3/d3.js"></script>
+  
+  <script src="JS/BCD_currentDraft1.js"></script>
+
 </head>
 
 <body>
@@ -12,7 +16,7 @@
 <br>
   <h2>Patient</h2>
   <br>
-  <form class="bcd_form" action="" method="post">
+  <form class="bcd_form" action="" method="get"> 
     Age: <input type="number" name="age" min="18" max="100" value="">
     <br>
     Menopause: <input type="text" name="menopause" value="">
@@ -105,11 +109,11 @@
     <br>
     MammaPrint: <input type="text" name="mammaPrint" value="">
     Adjuvant!: <input type="text" name="adjuvant" value="">
-    <button class="print" type="submit">Print</button>
+    <button class="print" type="button" onClick="makeInfoRequest(this.form)">Print</button>
   </form>
   
-  <div class="bcd_graph">
-  
+  <div class="bcd_graph" id="survivialGraph">
+	
   </div>
 </body>
 </html>
