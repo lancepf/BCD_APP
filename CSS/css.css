@@ -10,7 +10,13 @@ body {
 
 article {
 	width: 40%;
-	border-right: thick solid #EA80B0;	
+	border-right: thick solid #EA80B0;
+	float: left;	
+}
+
+#survivorGraphic {
+	float: right;
+	margin-right: 10em;	
 }
 
 h2 {
