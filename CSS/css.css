@@ -8,6 +8,11 @@ body {
 	font-family: Arial, Helvetica, sans-serif;	
 }
 
+article {
+	width: 40%;
+	border-right: thick solid #EA80B0;	
+}
+
 h2 {
   color: #EA80B0;
   display:inline;
