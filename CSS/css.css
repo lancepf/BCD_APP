@@ -19,6 +19,10 @@ article {
 	margin-right: 10em;	
 }
 
+.logo {
+	margin:1em;
+}
+
 h1 {
 	display: inline;
 	clear: left;
