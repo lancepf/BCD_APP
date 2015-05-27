@@ -19,6 +19,10 @@ article {
 	margin-right: 10em;	
 }
 
+h1 {
+	display: inline;
+}
+
 h2 {
   color: #EA80B0;
   display:inline;
