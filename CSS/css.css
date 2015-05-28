@@ -32,6 +32,10 @@ article {
 	margin:0.5em;
 }
 
+header {
+	background-color: white;
+}
+
 h1 {
 	display: inline;
 	clear: left;
