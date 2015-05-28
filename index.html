@@ -26,13 +26,14 @@
     event.preventDefault();
   });
 </script>
-    Age: <input type="number" name="age" min="18" max="100" size="2" value="">
-    <br>
-    Menopause: <input type="text" name="menopause" value="">
-    <br>
-    Family History: <input type="text" name="familyHistory" value="">
+    Age: <input type="number" name="age" min="18" max="100" size="2" value=""> Menopause: <input type="text" size="2" name="menopause" value="">
     <br>
     BRCA: <input type="text" name="familyHistory" value="">
+    Family History: <select name="familyHistory" value="">
+    	<option value=""> </option>
+    	<option value="Yes">Yes</option>
+    	<option value="No">No</option>
+    	</select>
     <br>
     Breast density: <input type="text" name="breastDensity" value="">
   <br>
