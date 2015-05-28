@@ -5,7 +5,16 @@
 }
 
 body {
-	font-family: Arial, Helvetica, sans-serif;	
+	font-family: Arial, Helvetica, sans-serif;
+	background: #ea80b0; /* Old browsers */
+	background: -moz-linear-gradient(left,  #ea80b0 0%, #ffffff 50%, #ea80b0 100%, #d7dee3 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ea80b0), color-stop(50%,#ffffff), color-stop(100%,#ea80b0), color-stop(100%,#d7dee3)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #ea80b0 0%,#ffffff 50%,#ea80b0 100%,#d7dee3 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  #ea80b0 0%,#ffffff 50%,#ea80b0 100%,#d7dee3 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  #ea80b0 0%,#ffffff 50%,#ea80b0 100%,#d7dee3 100%); /* IE10+ */
+	background: linear-gradient(to right,  #ea80b0 0%,#ffffff 50%,#ea80b0 100%,#d7dee3 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ea80b0', endColorstr='#d7dee3',GradientType=1 ); /* IE6-9 */
+
 }
 
 article {
