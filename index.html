@@ -41,7 +41,8 @@
     </fieldset>
   <br>
   <br>
-  <h2>Tumor</h2>
+  <fieldset>
+  <legend>Tumor</legend>
   <br>
     Stage<span class="asterisk">*</span>: <select name="Stage.Group.pathology" required>
     	<option value="">Please select below</option>
@@ -117,9 +118,11 @@
     <input type="checkbox" name="Surgery" value="Surgery">Surgery
     <input type="checkbox" name="Radiation" value="Radiation therapy">Radiation therapy
     <input type="checkbox" name="chemo" value="Chemotherapy">Chemotherapy
+    </fieldset>
   <br>
   <br>
-  <h2>Assessment Scores</h2>
+  <fieldset>
+  <legend>Assessment Scores</legend>
   <br>
     OncotypeDx: <input type="text" name="Oncotype" value="">
     PAM50: <input type="text" name="pam50" value="">
@@ -128,6 +131,7 @@
     Adjuvant!: <input type="text" name="adjuvant" value="">
     <!--button class="print" type="button" onclick="makeInfoRequest(this.form);">Print</button-->
 	<input class="print" type="submit" name="launch" value="Launch" onclick="makeInfoRequest(this.form);"-->
+	</fieldset>
   </form>
   </article>
   <div class="bcd_graph" id="survivialGraph">
