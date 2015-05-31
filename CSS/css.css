@@ -45,7 +45,7 @@ h1 {
 }
 
 h2 {
-  color: #EA80B0;
+  color: #FFFFFF;
   display:inline;
   margin: 0 0 10 0;
 }
@@ -79,6 +79,9 @@ h2 {
     box-shadow: 0 0 3px #aaa; 
 }
 
+legend {
+	background-color:#EA80B0;
+}
 /* Button Style */
 button.submit {
     background-color: #68b12f;
