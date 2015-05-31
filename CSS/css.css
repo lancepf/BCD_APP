@@ -54,6 +54,7 @@ h2 {
 	font-size: 0.688em;	
 	color: #d45252;
 	display: inline;
+	float:right;
 }
 
 .asterisk {
