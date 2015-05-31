@@ -87,6 +87,7 @@ fieldset {
 fieldset legend {
 	background-color:#EA80B0;
 	border-radius:2em;
+	padding:3em;
 }
 /* Button Style */
 button.submit {
