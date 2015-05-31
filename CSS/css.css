@@ -79,6 +79,9 @@ h2 {
     box-shadow: 0 0 3px #aaa; 
 }
 
+fieldset {
+	border-radius:2em;
+}
 legend {
 	background-color:#EA80B0;
 	border-radius:2em;
