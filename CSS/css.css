@@ -80,10 +80,10 @@ h2 {
 }
 
 fieldset {
+	border:0.5em solid #000000;
 	border-radius:2em;
-	color:#000000;
 }
-legend {
+fieldset legend {
 	background-color:#EA80B0;
 	border-radius:2em;
 }
