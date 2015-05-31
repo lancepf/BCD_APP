@@ -81,6 +81,7 @@ h2 {
 
 legend {
 	background-color:#EA80B0;
+	border-radius:2em;
 }
 /* Button Style */
 button.submit {
