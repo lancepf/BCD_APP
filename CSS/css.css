@@ -81,6 +81,10 @@ h2 {
     box-shadow: 0 0 3px #aaa; 
 }
 
+.bcd_form select {
+	margin:0.25em;
+}
+
 fieldset {
 	border:0.25em solid #000000;
 	border-radius:0.5em;
