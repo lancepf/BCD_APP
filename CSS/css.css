@@ -75,6 +75,19 @@ h2 {
     border-radius:2px;
     margin:0.25em;
 }
+
+.bcd_form input [type='number'] {
+	margin:0.25em;	
+}
+
+.bcd_form input [type='number']:out-of-range{
+	border-color:red;	
+}
+
+.bcd_form input [type='number']:in-range {
+	border-color:green;
+}
+
 .bcd_form input:focus {
     background: #fff; 
     border:1px solid #EA80B0; 
