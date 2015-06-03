@@ -119,6 +119,8 @@ function iframeAppears(path) {
 	d3.select("#infoFrameIn").remove();
 //<iframe src="http://www.weather.gov/" width="800" height="300"></iframe>
 	d3.select("#infoFrame").append("iframe").attr("id","infoFrameIn")
+			.style("width", "630px")
+			.style("height", "400px")
 			.attr("src",path);
 }
 
