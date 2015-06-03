@@ -17,7 +17,8 @@ article {
 
 #survivorGraphic {
 	float: right;
-	margin: 3em;	
+	margin: 3em;
+	border:1px solid #000000;
 }
 
 .logo {
