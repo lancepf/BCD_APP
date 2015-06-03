@@ -149,6 +149,7 @@ button.submit:hover {
     opacity:.85;
     cursor: pointer; 
 }
+
 button.submit:active {
     border: 1px solid #20911e;
     box-shadow: 0 0 10px 5px #356b0b inset; 
@@ -156,5 +157,12 @@ button.submit:active {
     -moz-box-shadow: 0 0 10px 5px #356b0b inset;
     -ms-box-shadow: 0 0 10px 5px #356b0b inset;
     -o-box-shadow: 0 0 10px 5px #356b0b inset;
-     
+}
+
+button.print {
+    box-shadow: 0 0 10px 5px #356b0b inset; 
+    -webkit-box-shadow:0 0 10px 5px #356b0b inset ;
+    -moz-box-shadow: 0 0 10px 5px #356b0b inset;
+    -ms-box-shadow: 0 0 10px 5px #356b0b inset;
+    -o-box-shadow: 0 0 10px 5px #356b0b inset;
 }
