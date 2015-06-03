@@ -104,6 +104,9 @@ input [type='number' i] {
 	margin:0.5em;
 }
 
+input.checkbox {
+	margin-left:1.5em;
+}
 select {
 	margin:0.25em;
 }
