@@ -148,7 +148,7 @@ function armInfoButton (incomingRequest) {
 				gender = incomingRequest[index][1];
 			}
 		}
-		var baseURL_BCmainSearchCriteria_task = "http://service.oib.utah.edu:8080/infobutton-service/infoRequest?representedOrganization.id.root=1.3.6.1.4.1.5884&taskContext.c.c=PROBLISTREV&mainSearchCriteria.v.c=436201000124104&mainSearchCriteria.v.cs=2.16.840.1.113883.6.96"; //20140701  126926005
+		var baseURL_BCmainSearchCriteria_task = "http://service.oib.utah.edu:8080/infobutton-service/infoRequest?representedOrganization.id.root=1.3.6.1.4.1.5884&taskContext.c.c=PROBLISTREV&mainSearchCriteria.v.c=126926005&mainSearchCriteria.v.cs=2.16.840.1.113883.6.96"; //20140701  126926005
 //http://service.oib.utah.edu:8080/infobutton-service/infoRequest?representedOrganization.id.root=1.3.6.1.4.1.5884&taskContext.c.c=PROBLISTREV&mainSearchCriteria.v.c=C50&mainSearchCriteria.v.cs=2.16.840.1.113883.6.90";
 		
 		var genderParam = '&patientPerson.administrativeGenderCode.c=' + gender + '' ;
