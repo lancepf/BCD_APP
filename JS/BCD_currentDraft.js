@@ -100,6 +100,11 @@ console.log("armInfoFrame", iframeInfoUrl);
 //place content on page	
 function graphAppears(path) {
 		d3.select("#survivorDiv").remove();
+		
+		//d3.select("#survivialGraph")
+		//	.style("float","left");
+
+			
 		d3.select("#survivialGraph").append("div").attr("id","survivorDiv")
 			//.style("float","left")
 			//.style("width", "430px")
