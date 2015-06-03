@@ -79,6 +79,12 @@ h2 {
     margin:0.25em;
 }
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
 .bcd_form input [type='number'] {
 	margin:0.25em;
 	border:1px solid #aaa;
