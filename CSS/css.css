@@ -159,7 +159,7 @@ button.submit:active {
     -o-box-shadow: 0 0 10px 5px #356b0b inset;
 }
 
-button.print {
+input.print {
     box-shadow: 0 0 10px 5px #356b0b inset; 
     -webkit-box-shadow:0 0 10px 5px #356b0b inset ;
     -moz-box-shadow: 0 0 10px 5px #356b0b inset;
