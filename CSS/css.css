@@ -101,7 +101,7 @@ input [type='number' i] {
 }
 
 .bcd form input [type='checkbox'] {
-	margin:0.5em;
+	margin-lef:0.5em;
 }
 
 input.checkbox {
