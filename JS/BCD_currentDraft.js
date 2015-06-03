@@ -92,6 +92,10 @@ console.log("result",resultPath);
 graphAppears(resultPath); //put graph on page in div with id survivalGraph
 
 var infoButtonUrl = armInfoButton(ptData);
+//onclick="window.open(this.href,'popUpWindow','height=400,width=600,left=10,top=10,,scrollbars=yes,menubar=no'); return false;"
+//onclick="window.open('http://www.website.com/page')" 
+d3.select(".generalInfo").attr("onclick","window.open(\""+infoButtonUrl+"\")");
+
 var iframeInfoUrl = armInfoFrame(ptData);
 console.log("armInfoButton", infoButtonUrl);
 console.log("armInfoFrame", iframeInfoUrl);
@@ -99,12 +103,7 @@ console.log("armInfoFrame", iframeInfoUrl);
 
 //place content on page	
 function graphAppears(path) {
-		d3.select("#survivorDiv").remove();
-		
-		//d3.select("#survivialGraph")
-		//	.style("float","left");
-
-			
+		d3.select("#survivorDiv").remove();		
 		d3.select("#survivialGraph").append("div").attr("id","survivorDiv")
 			//.style("float","left")
 			//.style("width", "430px")
@@ -135,14 +134,18 @@ function armInfoButton (incomingRequest) {
 		for (var index  = 0; index < incomingRequest.length; ++index) { //over parameters
 			if(conceptMatch(incomingRequest[index],["age"]) ) {
 				age = incomingRequest[index][1];
+				if (age < 0 || (/[^\d]/.test(age)) || age == "" ) { age = 0;}
 			}
 			if(conceptMatch(incomingRequest[index],["gender"]) ) {
 				gender = incomingRequest[index][1];
 			}
 		}
-		var baseURL_BCmainSearchCriteria_task = "http://service.oib.utah.edu:8080/infobutton-service/infoRequest?representedOrganization.id.root=1.3.6.1.4.1.5884&taskContext.c.c=PROBLISTREV&mainSearchCriteria.v.c=126926005&mainSearchCriteria.v.cs=2.16.840.1.113883.6.96";
+		var baseURL_BCmainSearchCriteria_task = "http://service.oib.utah.edu:8080/infobutton-service/infoRequest?representedOrganization.id.root=1.3.6.1.4.1.5884&taskContext.c.c=PROBLISTREV&mainSearchCriteria.v.c=436201000124104&mainSearchCriteria.v.cs=2.16.840.1.113883.6.96"; //20140701  126926005
 //http://service.oib.utah.edu:8080/infobutton-service/infoRequest?representedOrganization.id.root=1.3.6.1.4.1.5884&taskContext.c.c=PROBLISTREV&mainSearchCriteria.v.c=C50&mainSearchCriteria.v.cs=2.16.840.1.113883.6.90";
 
+//http://service.oib.utah.edu:8080/infobutton-service/infoRequest?representedOrganization.id.root=1.3.6.1.4.1.5884&taskContext.c.c=PROBLISTREV&mainSearchCriteria.v.c=20140701&mainSearchCriteria.v.cs=2.16.840.1.113883.6.96&patientPerson.administrativeGenderCode.c=F&age.v.v=44&age.v.u=a&informationRecipient=PROV&performer=PROV&performer.languageCode.c=en&performer.healthCareProvider.c.c=200000000X&informationRecipient=PROV&xsltTransform=Infobutton_UI
+
+//http://service.oib.utah.edu:8080/infobutton-service/infoRequest?representedOrganization.id.root=1.3.6.1.4.1.5884&taskContext.c.c=PROBLISTREV&mainSearchCriteria.v.c=126926005&mainSearchCriteria.v.cs=2.16.840.1.113883.6.96&patientPerson.administrativeGenderCode.c=F&age.v.v=&age.v.u=a&informationRecipient=PROV&performer=PROV&performer.languageCode.c=en&performer.healthCareProvider.c.c=200000000X&informationRecipient=PROV&xsltTransform=Infobutton_UI
 		
 		var genderParam = '&patientPerson.administrativeGenderCode.c=' + gender + '' ;
 		var ageParam = '&age.v.v=' + age + '&age.v.u=a';
