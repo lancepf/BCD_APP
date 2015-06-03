@@ -69,32 +69,17 @@ function makeInfoRequest (fromForm) {
 console.log(fromForm);
 //standards not incorporated in this version
 var ptData = [
-	//context for graph
 	["disMetastasisrange",fromForm["Distant.metastases.clinical"].options[fromForm["Distant.metastases.clinical"].selectedIndex].text,"notUsed","notUsed"], //"Distant.metastases.clinical" fromForm.Distant.metastases.clinical.selectedIndex
 	["tumorSize",fromForm["Primary.tumor.pathology"].options[fromForm["Primary.tumor.pathology"].selectedIndex].text,"notUsed","notUsed"], //"Primary.tumor.pathology" 
 	["regionalLN",fromForm["Regional.lymph.nodes"].options[fromForm["Regional.lymph.nodes"].selectedIndex].text,"notUsed","notUsed"], //Regional.lymph.nodes
-	["stage",fromForm["Stage.Group.pathology"].options[fromForm["Stage.Group.pathology"].selectedIndex].text,"notUsed","notUsed"], //Stage.Group.pathology
-	
-	["age",fromForm["age"].value,"notUsed","notUsed"], //age
-	["gender","F","notUsed","notUsed"] //gender female
-
+	["stage",fromForm["Stage.Group.pathology"].options[fromForm["Stage.Group.pathology"].selectedIndex].text,"notUsed","notUsed"] //Stage.Group.pathology
 ];
-//<category scheme="patientPerson.administrativeGenderCode.c" term="M"/>
-//<category scheme="ageGroup.v.c" term="D000328"/>
-//<category scheme="taskContext.c.c" term="PROBLISTREV"/>
-//<category scheme="mainSearchCriteria.v.c" term="C50"/>
-//<category scheme="mainSearchCriteria.v.cs" term="2.16.840.1.113883.6.90"/>
-console.log("ptdata", ptData);
+
 
 //["resourceLocation","/resources/resource1.png","notUsed","notUsed"]
 var resultPath = infographicLogic(ptData); //retrieve graph
 console.log("result",resultPath);
 graphAppears(resultPath); //put graph on page in div with id survivalGraph
-
-var infoButtonUrl = armInfoButton(ptData);
-var iframeInfoUrl = armInfoFrame(ptData);
-console.log("armInfoButton", infoButtonUrl);
-console.log("armInfoFrame", iframeInfoUrl);
 }
 
 //place content on page	
@@ -112,63 +97,6 @@ function graphAppears(path) {
 			.attr("src",path);
 }
 
-//the next two functions are quick-n-dirty for the demonstration for week 6/1/2015
-//armInfoButton provides an openInfoButton request
-//Context Here is currently limited to general info on BC
-function armInfoButton (incomingRequest) {
-
-	//yes were being redundant but collecting information on how to write this code better later
-	function conceptMatch (paramA,paramB) {//this will be more interesting later when trying to match codes from multiple systems, or lack of codes
-	if (paramA[0] == paramB[0]) {return 1;}
-	else {return 0;}
-	}
-	//we parse out the criteria we need
-		var age = 0;
-		var gender = "";
-		//short cut but ideally we'd be copying infographicLogic!
-		//so its looking like the matching algorithm of infographicLogic should be made into a separate method! COOL!
-		for (var index  = 0; index < incomingRequest.length; ++index) { //over parameters
-			if(conceptMatch(incomingRequest[index],["age"]) ) {
-				age = incomingRequest[index][1];
-			}
-			if(conceptMatch(incomingRequest[index],["gender"]) ) {
-				gender = incomingRequest[index][1];
-			}
-		}
-		var baseURL_BCmainSearchCriteria_task = "http://service.oib.utah.edu:8080/infobutton-service/infoRequest?representedOrganization.id.root=1.3.6.1.4.1.5884&taskContext.c.c=PROBLISTREV&mainSearchCriteria.v.c=126926005&mainSearchCriteria.v.cs=2.16.840.1.113883.6.96";
-//http://service.oib.utah.edu:8080/infobutton-service/infoRequest?representedOrganization.id.root=1.3.6.1.4.1.5884&taskContext.c.c=PROBLISTREV&mainSearchCriteria.v.c=C50&mainSearchCriteria.v.cs=2.16.840.1.113883.6.90";
-
-		
-		var genderParam = '&patientPerson.administrativeGenderCode.c=' + gender + '' ;
-		var ageParam = '&age.v.v=' + age + '&age.v.u=a';
-		var providerInfo = "&informationRecipient=PROV&performer=PROV&performer.languageCode.c=en&performer.healthCareProvider.c.c=200000000X&informationRecipient=PROV&xsltTransform=Infobutton_UI";
-		var url = baseURL_BCmainSearchCriteria_task + genderParam + ageParam + providerInfo;
-	return url;
-}
-//armInfoFrame puts all entered context into an UpToDate search...this is the quick and dirty approach
-function armInfoFrame(incomingRequest) {
-	//put values in string for url based search of UptoDate
-	var cheapContext = "";
-	var paramName = "";
-	var paramValue = "";
-	function conceptMatch (paramA,paramB) {//this will be more interesting later when trying to match codes from multiple systems, or lack of codes
-		if (paramA[0] == paramB[0]) {return 1;}
-		else {return 0;}
-	}
-	//very little context is being used presently - NEED Authorization from UpToDate to use HL7 message for querying!!
-	//then would have ability to really get good context into search
-	for (var index  = 0; index < incomingRequest.length; ++index) { //over parameters
-		if(conceptMatch(incomingRequest[index],["disMetastasisrange"]) ) {
-			if (incomingRequest[index][1] == "M1") { cheapContext = cheapContext +" metastatic"; }
-		}
-		if(conceptMatch(incomingRequest[index],["age"]) ) {
-			//age if smaller than 17 use adolescent - child produces strange results with website search engine
-			if(incomingRequest[index][1] < 17) { cheapContext = cheapContext +" adolescent "; }
-		}
-	}
-	var url = "http://www.uptodate.com/contents/search?search="+cheapContext+" Breast Cancer&sp=0&searchType=PLAIN_TEXT&source=USER_INPUT&searchControl=TOP_PULLDOWN&searchOffset=";
-	return url;
-}
 
 
 
@@ -193,7 +121,7 @@ function infographicLogic (requestParameters) {
 //future changes where the input may need parsing, such as mapping to UMLS concepts
 var resourceProfile = function (parametersToUse) {
 	//var arry = new Array(parametersToUse);
-	//console.log(parametersToUse);
+	console.log(parametersToUse);
 	return parametersToUse;
 }
 //here's the array of resources with their range definitions
@@ -223,14 +151,14 @@ var bestIndex = 0;
 //future use sorting to make matching more efficient//
 for (var index2 = 0; index2 < resourceArray.length; ++index2) { //resource profiles
 //				console.log("resourceArray[index2]",resourceArray[index2][index3]);
-		//console.log("index2",index2);
+		console.log("index2",index2);
 		currentMatch = 0;
 	for (var index3 = 0; index3 < resourceArray[index2].length; ++index3) {//parameters of resources[index3]
 		//first check for parameter concept match
-		//console.log("index3",index3);
+		console.log("index3",index3);
 //	console.log("incomingRequest[index]",incomingRequest[index]);		
 		for (var index  = 0; index < incomingRequest.length; ++index) { //over parameters
-		//console.log("index",index);
+		console.log("index",index);
 			if ( conceptMatch(incomingRequest[index],resourceArray[index2][index3]) ) {
 				//now check to see if incomingRequest value is in acceptable range
 				if( valueMatch(incomingRequest[index][1],resourceArray[index2][index3][1]) ){
@@ -243,8 +171,8 @@ for (var index2 = 0; index2 < resourceArray.length; ++index2) { //resource profi
 					}
 				}						
 			}
-			//console.log("currentMatch", currentMatch);
-			//console.log("bestMatch",bestMatch);
+			console.log("currentMatch", currentMatch);
+			console.log("bestMatch",bestMatch);
 		}
 	}
 }
@@ -253,7 +181,7 @@ function conceptMatch (paramA,paramB) {
 	if (paramA[0] == paramB[0]) {return 1;}
 	else {return 0;}
 }
-function valueMatch (valueA,valuesB) { 
+function valueMatch (valueA,valuesB) {
 	//currently we are just looking for sting matching. when we start using ranges this function will become interesting
     for (var i = 0; i < valuesB.length; i++) {
         if (valuesB[i] === valueA) {
