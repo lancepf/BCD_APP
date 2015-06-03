@@ -158,12 +158,12 @@ input.print, input.generalInfo {
     text-align: center;
     text-shadow: 0 -1px 0 #396715;
 }
-input.print:hover {
+input.print:hover, input.generalInfo:hover {
     opacity:.85;
     cursor: pointer; 
 }
 
-input.print:active {
+input.print:active, input.generalInfo:active {
     border: 1px solid #20911e;
     box-shadow: 0 0 10px 5px #356b0b inset; 
     -webkit-box-shadow:0 0 10px 5px #356b0b inset ;
