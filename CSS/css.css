@@ -122,6 +122,13 @@ fieldset legend {
 	border-radius:0.5em;
 	padding:0.35em;
 }
+
+ul li {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+
 /* Button Style */
 input.submit {
     background-color: #68b12f;
