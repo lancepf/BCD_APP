@@ -132,7 +132,7 @@ ul li {
 }
 
 /* Button Style */
-input.submit {
+input.print {
     background-color: #68b12f;
     background: -webkit-gradient(linear, left top, left bottom, from(#68b12f), to(#50911e));
     background: -webkit-linear-gradient(top, #68b12f, #50911e);
@@ -158,12 +158,12 @@ input.submit {
     text-align: center;
     text-shadow: 0 -1px 0 #396715;
 }
-input.submit:hover {
+input.print:hover {
     opacity:.85;
     cursor: pointer; 
 }
 
-input.submit:active {
+input.print:active {
     border: 1px solid #20911e;
     box-shadow: 0 0 10px 5px #356b0b inset; 
     -webkit-box-shadow:0 0 10px 5px #356b0b inset ;
