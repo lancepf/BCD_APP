@@ -154,7 +154,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c12440', end
     padding: 6px 20px;
     text-align: center;
     text-shadow: 0 -1px 0 #396715;
-    margin:2em 0;
 }
 input.print:hover, input.generalInfo:hover {
     opacity:.85;
