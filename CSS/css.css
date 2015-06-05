@@ -149,11 +149,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c12440', end
     -moz-border-radius: 3px;
     -ms-border-radius: 3px;
     -o-border-radius: 3px;
-    box-shadow: inset 0 1px 0 0 #9fd574;
+    /*box-shadow: inset 0 1px 0 0 #9fd574;
     -webkit-box-shadow: 0 1px 0 0 #9fd574 inset ;
     -moz-box-shadow: 0 1px 0 0 #9fd574 inset;
     -ms-box-shadow: 0 1px 0 0 #9fd574 inset;
-    -o-box-shadow: 0 1px 0 0 #9fd574 inset;
+    -o-box-shadow: 0 1px 0 0 #9fd574 inset;*/
     color: white;
     font-weight: bold;
     padding: 6px 20px;
