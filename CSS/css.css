@@ -142,8 +142,8 @@ background: -ms-linear-gradient(top,  #c12440 0%,#e16077 100%); /* IE10+ */
 background: linear-gradient(to bottom,  #c12440 0%,#e16077 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c12440', endColorstr='#e16077',GradientType=0 ); /* IE6-9 */
 
-    border: 1px solid #509111;
-    border-bottom: 1px solid #5b992b;
+    border: 1px solid #000000;
+    border-bottom: 1px solid #000000;
     border-radius: 3px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
